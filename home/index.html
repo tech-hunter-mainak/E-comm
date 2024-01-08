@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="none">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        var disp1 = document.getElementById("div1").style;
+        var disp2 = document.getElementById("div2").style;
+        setInterval(() => {
+            
+        }, 2000);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            outline: 0;
+        }
+
+        #div1,
+        #div2 {
+            height: 100%;
+            width: 100%;
+            background-color: bisque;
+            border: 1px solid black;
+            position: inherit;
+        }
+
+        #back {
+            height: 400px;
+            width: 100%;
+            position: absolute;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        #div1 {
+            left: 100%;
+            background-color: aqua;
+            animation: slide2 2s;
+        }
+
+        #div2 {
+            left: 0;
+            background-color: blueviolet;
+            animation: slide1 2s;
+        }
+
+        @keyframes slide1 {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: -100%;
+            }
+        }
+
+        @keyframes slide2 {
+            from {
+                left: 100%;
+            }
+
+            to {
+                left: 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="wrap">
-        <header>
-            <h6>Admin Login</h6>
-            <h6>Language</h6>
-        </header>
-        <div class="imgslider">
-            <div class="slide1"></div>
-            <div class="slide2"></div>
-            <div class="slide3"></div>
-        </div>
-        <div class="searchBx">
-
-        </div>
-        <div class="prefsBx">
-            <div class="prefs">
-                <div class="productcategory">
-                    <div class="imgBx">
-
-                    </div>
-                </div>
-                <div class="productcategory">
-                    <div class="imgBx">
-
-                    </div>
-                </div>
-                <div class="productcategory">
-                    <div class="imgBx">
-
-                    </div>
-                </div>
-                <div class="productcategory">
-                    <div class="imgBx">
-
-                    </div>
-                </div>
-                <div class="productcategory">
-                    <div class="imgBx">
-
-                    </div>
-                </div>
-                <div class="productcategory">
-                    <div class="imgBx">
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="back">
+        <div id="div1"></div>
+        <div id="div2"></div>
     </div>
 </body>
+
 </html>
